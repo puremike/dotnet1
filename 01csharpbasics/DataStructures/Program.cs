@@ -63,6 +63,7 @@ namespace DataStructures
 
 
             Console.WriteLine("\nUSING DICTIONARY .....\n");
+
             Dictionary<string, string> countryCity = new Dictionary<string, string>();
             countryCity["Nigeria"] = "FCT Abuja";
             countryCity["India"] = "Mumbai";
@@ -72,8 +73,15 @@ namespace DataStructures
             checkEvenNumbers[2] = true;
             checkEvenNumbers[3] = false;
 
+            // dict can take array
+            Dictionary<string, int[]> oddEvenNumbers = new Dictionary<string, int[]>();
+            oddEvenNumbers["Odd Numbers"] = new int[]{1, 3, 5, 7, 9 }; // one way
+            oddEvenNumbers["Even Numbers"] = [2, 4, 6, 8, 10]; // another way
+
             Console.WriteLine($"Nigeria: {countryCity["Nigeria"]}");
             Console.WriteLine(checkEvenNumbers[2]);
+            Console.WriteLine($"Odd Number from 1 - 10: {String.Join(", ", oddEvenNumbers["Odd Numbers"])}");
+            Console.WriteLine($"Even Numbers from 1 - 10: {String.Join(", ", oddEvenNumbers["Even Numbers"])}");
 
 
         }
