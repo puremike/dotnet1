@@ -12,3 +12,4 @@ C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\DataStructures\obj
 C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\DataStructures\obj\Debug\net9.0\DataStructures.pdb
 C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\DataStructures\obj\Debug\net9.0\DataStructures.genruntimeconfig.cache
 C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\DataStructures\obj\Debug\net9.0\ref\DataStructures.dll
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\DataStructures\obj\Debug\net9.0\DataStructures.sourcelink.json
