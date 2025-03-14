@@ -1,0 +1,15 @@
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.AssemblyInfo.cs
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.sourcelink.json
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\bin\Debug\net9.0\Methods.exe
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\bin\Debug\net9.0\Methods.deps.json
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\bin\Debug\net9.0\Methods.runtimeconfig.json
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\bin\Debug\net9.0\Methods.dll
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\bin\Debug\net9.0\Methods.pdb
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.dll
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\refint\Methods.dll
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.pdb
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\Methods.genruntimeconfig.cache
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\Methods\obj\Debug\net9.0\ref\Methods.dll
