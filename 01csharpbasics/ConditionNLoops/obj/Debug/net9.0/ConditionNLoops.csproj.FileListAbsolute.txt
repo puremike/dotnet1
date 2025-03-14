@@ -1,0 +1,15 @@
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\bin\Debug\net9.0\ConditionNLoops.exe
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\bin\Debug\net9.0\ConditionNLoops.deps.json
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\bin\Debug\net9.0\ConditionNLoops.runtimeconfig.json
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\bin\Debug\net9.0\ConditionNLoops.dll
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\bin\Debug\net9.0\ConditionNLoops.pdb
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.AssemblyInfoInputs.cache
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.AssemblyInfo.cs
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.csproj.CoreCompileInputs.cache
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.sourcelink.json
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.dll
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\refint\ConditionNLoops.dll
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.pdb
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ConditionNLoops.genruntimeconfig.cache
+C:\Users\ADMIN\Documents\01WORK\dotnet\dotnet1\01csharpbasics\ConditionNLoops\obj\Debug\net9.0\ref\ConditionNLoops.dll
