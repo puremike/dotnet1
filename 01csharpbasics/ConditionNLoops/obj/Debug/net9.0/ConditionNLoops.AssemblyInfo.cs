@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ConditionNLoops")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6f083d7aa22a76421f41fa1e0d8ab5335d1615a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7f0f99c18d462840948fce915da964995bd71f6e")]
 [assembly: System.Reflection.AssemblyProductAttribute("ConditionNLoops")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ConditionNLoops")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

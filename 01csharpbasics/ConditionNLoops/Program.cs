@@ -91,7 +91,7 @@ public class Program
 
         foreach (int i in n)
         {
-            if (i % 2== 0)
+            if (i % 2 == 0)
             {
                 evenN.Add(i);
             }
