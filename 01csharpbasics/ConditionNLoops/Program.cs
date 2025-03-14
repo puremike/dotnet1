@@ -84,9 +84,30 @@ public class Program
         //    Console.WriteLine($"{type} : {i}");
         //}
 
-        // for loop
-
         int[] n = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+        List<int> evenN = new List<int>();
+        List<int> oddN = new List<int>();
+
+        foreach (int i in n)
+        {
+            if (i % 2== 0)
+            {
+                evenN.Add(i);
+            }
+            else
+            {
+                oddN.Add(i);
+            }
+
+        }
+
+        var result = false ? string.Join(", ", evenN) : string.Join(", ", oddN);
+        Console.WriteLine($"Result: {String.Join(", ", result)}");
+        //Console.WriteLine($"Even Numbers: {String.Join(", ", evenN)}");
+        //Console.WriteLine($"Odd Numbers: {String.Join(", ", oddN)}");
+
+        // for loop
 
         int count = 0;
 
