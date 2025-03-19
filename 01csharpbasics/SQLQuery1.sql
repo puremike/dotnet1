@@ -4,21 +4,21 @@ GO
 CREATE TABLE TutorialAppSchema.Computer 
 ( 
     -- TableID INT IDENTITY(starting, increment by)
-    ComputerId INT IDENTITY(1,1) PRIMARY KEY,
+    ComputerId INT IDENTITY(1,1),
     -- NVARCHAR can take unicode and non-characters. You can use VARCHAR and CHAR for characters
-    Motherboard NVARCHAR(50),
+    MotherBoard NVARCHAR(50),
     CPUCores INT,
     HasWifi BIT,
     HasLTE BIT,
     ReleaseDate DATETIME,
     -- DECIMAL(18 whole number values, 4 decimals) 
     Price DECIMAL(18, 4),
-    VideoCard NVARCHAR(50),
+    VideoCard NVARCHAR(50),     
 );
 GO
 
 INSERT INTO TutorialAppSchema.Computer 
-    (Motherboard, CPUCores, HasWifi, HasLTE, ReleaseDate, Price, VideoCard)
+    (MotherBoard, CPUCores, HasWifi, HasLTE, ReleaseDate, Price, VideoCard)
 VALUES 
     ('ASUS ROG Strix X570-E', 8, 1, 0, '2023-05-15', 1299.99, 'NVIDIA RTX 3060'),
     ('MSI B550-A PRO', 4, 1, 1, '2022-11-01', 899.50, 'AMD Radeon RX 6600'),
@@ -36,7 +36,7 @@ DELETE FROM TutorialAppSchema.Computer WHERE ComputerId = 3;
 
 -- Insert a row into the table
 INSERT INTO TutorialAppSchema.Computer
-    (Motherboard, CPUCores, HasWifi, HasLTE, ReleaseDate, Price, VideoCard)
+    (MotherBoard, CPUCores, HasWifi, HasLTE, ReleaseDate, Price, VideoCard)
 VALUES
     ('Gigabyte Z490 AORUS', 6, 0, 0, '2021-08-20', 749.99, 'NVIDIA GTX 1660 Ti');
 
@@ -44,6 +44,6 @@ VALUES
 UPDATE TutorialAppSchema.Computer SET Price = 1000.99 WHERE ComputerId = 5;
 
 
-SELECT [Motherboard], [CPUCores], [HasWifi], [HasLTE], [ReleaseDate], [Price], [VideoCard] 
+SELECT [MotherBoard], [CPUCores], [HasWifi], [HasLTE], [ReleaseDate], [Price], [VideoCard] 
 FROM TutorialAppSchema.Computer
 ORDER BY Price DESC --DESC- decending order
