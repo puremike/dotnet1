@@ -2,6 +2,7 @@ namespace UseModels.Models
 {
     public class Computer
     {
+        public int ComputerId { get; set; }
         public string MotherBoard { get; set; } = "";
         public int CPUCores { get; set; }
         public bool HasWifi { get; set; }

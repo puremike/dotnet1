@@ -5,7 +5,7 @@ using Microsoft.Data.SqlClient;
 
 namespace UseModels.Data
 {
-    public class DatabaseHelper
+    public class DBHelperDapper
     {
         private string _connectionString = "Server=localhost;Database=dotnet1;TrustServerCertificate=true;Trusted_Connection=true;";
 

@@ -15,21 +15,27 @@ namespace UseModels
 
             var myComputer = new Computer()
             {
-                MotherBoard = "SDE-TUNO ARD",
-                CPUCores = 2,
+                MotherBoard = "TYZ-TANGO ARM",
+                CPUCores = 4,
                 HasWifi = true,
-                HasLTE = false,
+                HasLTE = true,
                 ReleaseDate = DateTime.Now,
-                Price = 599.99m,
-                VideoCard = "GTX 1660",
+                Price = 1599.99m,
+                VideoCard = "NVIDIA RTX 4060 Ti",
             };
 
-            // instantiate our DatabaseHelper class
-            var dbHelper = new DatabaseHelper();
+            // instantiate our DBHelperDapper class
+            var dbHelper = new DBHelperDapper();
+
+            // instantiate DBHelperEF class -entity framework
+            var dbHelperEF = new DBHelperEF();
+
+            // dbHelperEF.Add(myComputer); // insert a row to the database
+            // dbHelperEF.SaveChanges();
 
             // check if the database is connected
             string sqlCmd1 = "SELECT GETDATE()";
-            var returnCurrentDate = dbHelper.QuerySingleData<DateTime>(sqlCmd1, null);
+            var returnCurrentDate = dbHelper.QuerySingleData<DateTime>(sqlCmd1);
             Console.WriteLine("" + returnCurrentDate.ToString());
 
             // INSERT into the database
@@ -47,10 +53,19 @@ namespace UseModels
             // Console.WriteLine("data updated successfully!");
 
             // SELECT * FROM the database
-            string sqlCmd3 = @"SELECT * FROM TutorialAppSchema.Computer;";
-            var computers = dbHelper.QueryData<Computer>(sqlCmd3, null); //IEnumerable
+            // string sqlCmd3 = @"SELECT * FROM TutorialAppSchema.Computer;";
+            // var computers = dbHelper.QueryData<Computer>(sqlCmd3); //IEnumerable
 
-            foreach (var computer in computers)
+            // foreach (var computer in computers)
+            // {
+            //     Console.WriteLine($"{computer.MotherBoard}, {computer.CPUCores}, {computer.HasWifi}, {computer.HasLTE}, {computer.ReleaseDate}, {computer.Price}, {computer.VideoCard} ");
+            // }
+
+
+            // null-coalescing (??), because it guarantees computersEF is never null, making the code safer
+            var computersEF = dbHelperEF.Computer?.ToList() ?? new List<Computer>();//IEnumerable converted to a List
+
+            foreach (var computer in computersEF)
             {
                 Console.WriteLine($"{computer.MotherBoard}, {computer.CPUCores}, {computer.HasWifi}, {computer.HasLTE}, {computer.ReleaseDate}, {computer.Price}, {computer.VideoCard} ");
             }
