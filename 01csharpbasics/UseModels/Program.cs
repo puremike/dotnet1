@@ -4,14 +4,20 @@ using Dapper;
 using Microsoft.Data.SqlClient;
 using UseModels.Models;
 using UseModels.Data;
+using Microsoft.Extensions.Configuration;
+using Microsoft.VisualBasic;
 
 namespace UseModels
 {
     internal class Program
     {
-
         static void Main(string[] args)
         {
+
+            var config = new ConfigurationBuilder()
+            .SetBasePath(Directory.GetCurrentDirectory())
+            .AddJsonFile("appsettings.json")
+            .Build();
 
             var myComputer = new Computer()
             {
@@ -25,17 +31,17 @@ namespace UseModels
             };
 
             // instantiate our DBHelperDapper class
-            var dbHelper = new DBHelperDapper();
+            var dbHelper = new DBHelperDapper(config);
 
             // instantiate DBHelperEF class -entity framework
-            var dbHelperEF = new DBHelperEF();
+            var dbHelperEF = new DBHelperEF(config);
 
             // dbHelperEF.Add(myComputer); // insert a row to the database
             // dbHelperEF.SaveChanges();
 
             // check if the database is connected
             string sqlCmd1 = "SELECT GETDATE()";
-            var returnCurrentDate = dbHelper.QuerySingleData<DateTime>(sqlCmd1);
+            var returnCurrentDate = dbHelper.QuerySingleData<DateTime>(sqlCmd1, null);
             Console.WriteLine("" + returnCurrentDate.ToString());
 
             // INSERT into the database
@@ -54,7 +60,7 @@ namespace UseModels
 
             // SELECT * FROM the database
             // string sqlCmd3 = @"SELECT * FROM TutorialAppSchema.Computer;";
-            // var computers = dbHelper.QueryData<Computer>(sqlCmd3); //IEnumerable
+            // var computers = dbHelper.QueryData<Computer>(sqlCmd3, null); //IEnumerable
 
             // foreach (var computer in computers)
             // {

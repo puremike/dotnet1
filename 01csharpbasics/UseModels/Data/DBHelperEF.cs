@@ -1,10 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using UseModels.Models;
 
 namespace UseModels.Data
 {
-    public class DBHelperEF : DbContext
+    public class DBHelperEF(IConfiguration config) : DbContext
     {
+
+        private readonly string _config = config.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Database connection string not found");
+
         public DbSet<Computer> Computer { get; set; }
 
         // To connect to SQL database
@@ -12,7 +16,7 @@ namespace UseModels.Data
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Server=localhost;Database=dotnet1;TrustServerCertificate=true;Trusted_Connection=true;", optionsBuilder => optionsBuilder.EnableRetryOnFailure());
+                optionsBuilder.UseSqlServer(_config, optionsBuilder => optionsBuilder.EnableRetryOnFailure());
             }
         }
 
