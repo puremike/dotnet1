@@ -1,16 +1,32 @@
+using System.Text.Json.Serialization;
+
 namespace UseModels.Models
 {
     public class Computer
     {
+        [JsonPropertyName("computer_id")]
         public int ComputerId { get; set; }
-        public string MotherBoard { get; set; } = "";
-        public int CPUCores { get; set; }
-        public bool HasWifi { get; set; }
-        public bool HasLTE { get; set; }
-        public DateTime? ReleaseDate { get; set; }
-        public decimal Price { get; set; }
-        public string VideoCard { get; set; } = "";
 
+        [JsonPropertyName("motherboard")]
+        public string MotherBoard { get; set; } = "";
+
+        [JsonPropertyName("cpu_cores")]
+        public int CPUCores { get; set; }
+
+        [JsonPropertyName("has_wifi")]
+        public bool HasWifi { get; set; }
+
+        [JsonPropertyName("computer_id")]
+        public bool HasLTE { get; set; }
+
+        [JsonPropertyName("release_date")]
+        public DateTime? ReleaseDate { get; set; }
+
+        [JsonPropertyName("price")]
+        public decimal Price { get; set; }
+
+        [JsonPropertyName("video_card")]
+        public string VideoCard { get; set; } = "";
     }
 
 }

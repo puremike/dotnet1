@@ -10,6 +10,7 @@ using UseModels.ReadWrite;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using Newtonsoft.Json.Serialization;
+using AutoMapper;
 
 namespace UseModels
 {
@@ -102,9 +103,9 @@ namespace UseModels
                 foreach (var computer in computerDes)
                 {
                     // Use parameterized query to prevent SQL injection
-                    string sqlCmd2 = @"INSERT INTO TutorialAppSchema.Computer
-                        (MotherBoard, CPUCores, HasWifi, HasLTE, ReleaseDate, Price, VideoCard)
-                        VALUES(@MotherBoard, @CPUCores, @HasWifi, @HasLTE, @ReleaseDate, @Price, @VideoCard)";
+                    // string sqlCmd2 = @"INSERT INTO TutorialAppSchema.Computer
+                    //     (MotherBoard, CPUCores, HasWifi, HasLTE, ReleaseDate, Price, VideoCard)
+                    //     VALUES(@MotherBoard, @CPUCores, @HasWifi, @HasLTE, @ReleaseDate, @Price, @VideoCard)";
 
                     // dbHelper.ExecuteQuery(sqlCmd2, computer);
                 }
@@ -119,7 +120,46 @@ namespace UseModels
             string ComputerJSONCopy = JsonConvert.SerializeObject(computerDes, options);
             // File.WriteAllText("ComputerJSONCopy.txt", ComputerJSONCopy);
 
+            // using Automapper package to map destination to source
+            var mapper = new Mapper(new MapperConfiguration((cfg) =>
+            {
+                cfg.CreateMap<ComputerSnake, Computer>()
+                .ForMember(destination => destination.MotherBoard, options => options.MapFrom(source => source.motherboard))
+                .ForMember(destination => destination.CPUCores, options => options.MapFrom(source => source.cpu_cores))
+                .ForMember(destination => destination.VideoCard, options => options.MapFrom(source => source.video_card))
+                .ForMember(destination => destination.HasLTE, options => options.MapFrom(source => source.has_lte))
+                .ForMember(destination => destination.HasWifi, options => options.MapFrom(source => source.has_wifi))
+                .ForMember(destination => destination.Price, options => options.MapFrom(source => source.price))
+                .ForMember(destination => destination.ReleaseDate, options => options.MapFrom(source => source.release_date));
+            }));
+
+            string computerSnakeJSON = File.ReadAllText("ComputersSnake.json");
+            var deserializedComputerSnakeJSON = JsonConvert.DeserializeObject<IEnumerable<ComputerSnake>>(computerSnakeJSON);
+
+            if (deserializedComputerSnakeJSON != null)
+            {
+                var mappedJSON = mapper.Map<IEnumerable<Computer>>(deserializedComputerSnakeJSON);
+
+                foreach (var computer in mappedJSON)
+                {
+                    // Console.WriteLine(computer.MotherBoard);
+                }
+            }
+
+            // using System.Text.Json.Serialization for mapping
+            var deserializedComputerSnakeJSONSystem = JsonConvert.DeserializeObject<IEnumerable<Computer>>(computerSnakeJSON);
+
+            if (deserializedComputerSnakeJSONSystem != null)
+            {
+                foreach (var computer in deserializedComputerSnakeJSONSystem)
+                {
+                    // Console.WriteLine(computer.MotherBoard);
+                }
+            }
+
         }
+
+
 
     }
 
