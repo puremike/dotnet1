@@ -15,29 +15,23 @@ namespace UseModels.Data
         //  // ExecuteQuery method to handle UPDATE, INSERT, DELETE
         public void ExecuteQuery(string sqlCMD, object? parameters = null)
         {
-            using (IDbConnection dbConnection = new SqlConnection(_connectionString))
-            {
-                dbConnection.Open();
-                dbConnection.Execute(sqlCMD, parameters);
-            }
+            using SqlConnection dbConnection = new SqlConnection(_connectionString);
+            dbConnection.Open();
+            dbConnection.Execute(sqlCMD, parameters);
         }
 
         public IEnumerable<T> QueryData<T>(string sqlCMD, object? parameters = null)
         {
-            using (IDbConnection dbConnection = new SqlConnection(_connectionString))
-            {
-                dbConnection.Open();
-                return dbConnection.Query<T>(sqlCMD, parameters);
-            }
+            using SqlConnection dbConnection = new SqlConnection(_connectionString);
+            dbConnection.Open();
+            return dbConnection.Query<T>(sqlCMD, parameters);
         }
 
         public T QuerySingleData<T>(string sqlCMD, object? parameters = null)
         {
-            using (IDbConnection dbConnection = new SqlConnection(_connectionString))
-            {
-                dbConnection.Open();
-                return dbConnection.QuerySingle<T>(sqlCMD, parameters);
-            }
+            using SqlConnection dbConnection = new SqlConnection(_connectionString);
+            dbConnection.Open();
+            return dbConnection.QuerySingle<T>(sqlCMD, parameters);
 
         }
     }

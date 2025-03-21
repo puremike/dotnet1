@@ -6,6 +6,10 @@ using UseModels.Models;
 using UseModels.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.VisualBasic;
+using UseModels.ReadWrite;
+using Newtonsoft.Json;
+using System.Collections.Generic;
+using Newtonsoft.Json.Serialization;
 
 namespace UseModels
 {
@@ -71,19 +75,52 @@ namespace UseModels
             // null-coalescing (??), because it guarantees computersEF is never null, making the code safer
             var computersEF = dbHelperEF.Computer?.ToList() ?? new List<Computer>();//IEnumerable converted to a List
 
-            foreach (var computer in computersEF)
+            // foreach (var computer in computersEF)
+            // {
+            //     Console.WriteLine($"{computer.MotherBoard}, {computer.CPUCores}, {computer.HasWifi}, {computer.HasLTE}, {computer.ReleaseDate}, {computer.Price}, {computer.VideoCard} ");
+            // }
+
+
+            // string content = "I'm a DevOps and Backend Engineer. How can I help you today?\n";
+            // var readWrite = new FileRW();
+            // readWrite.ReadAndWriteFile(content);
+
+            // Console.WriteLine(myComputer.MotherBoard);
+            // Console.WriteLine(myComputer.VideoCard);
+            // Console.WriteLine(myComputer.HasLTE);
+            // Console.WriteLine($"Before Price: ${myComputer.Price}");
+            // myComputer.Price = 1099.99m;
+            // Console.WriteLine($"After Price: ${myComputer.Price}");
+
+            string readCJson = File.ReadAllText("Computers.json");
+            // Console.WriteLine(readCJson);
+
+            var computerDes = JsonConvert.DeserializeObject<IEnumerable<Computer>>(readCJson);
+
+            if (computerDes != null)
             {
-                Console.WriteLine($"{computer.MotherBoard}, {computer.CPUCores}, {computer.HasWifi}, {computer.HasLTE}, {computer.ReleaseDate}, {computer.Price}, {computer.VideoCard} ");
+                foreach (var computer in computerDes)
+                {
+                    // Use parameterized query to prevent SQL injection
+                    string sqlCmd2 = @"INSERT INTO TutorialAppSchema.Computer
+                        (MotherBoard, CPUCores, HasWifi, HasLTE, ReleaseDate, Price, VideoCard)
+                        VALUES(@MotherBoard, @CPUCores, @HasWifi, @HasLTE, @ReleaseDate, @Price, @VideoCard)";
+
+                    // dbHelper.ExecuteQuery(sqlCmd2, computer);
+                }
+                // Console.WriteLine("Data inserted successfully!");
             }
+
+            var options = new JsonSerializerSettings
+            {
+                ContractResolver = new CamelCasePropertyNamesContractResolver()
+            };
+
+            string ComputerJSONCopy = JsonConvert.SerializeObject(computerDes, options);
+            // File.WriteAllText("ComputerJSONCopy.txt", ComputerJSONCopy);
 
         }
 
-        // Console.WriteLine(myComputer.Motherboard);
-        // Console.WriteLine(myComputer.VideoCard);
-        // Console.WriteLine(myComputer.HasLTE);
-        // Console.WriteLine($"Before Price: ${myComputer.Price}");
-        // myComputer.Price = 1099.99m;
-        // Console.WriteLine($"After Price: ${myComputer.Price}");
     }
 
 }
